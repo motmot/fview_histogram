@@ -1,18 +1,12 @@
-from __future__ import with_statement, division
-
-import pkg_resources
 import warnings, time
 import enthought.traits.api as traits
-
 import motmot.fview.traited_plugin as traited_plugin
-import motmot.fview_ext_trig.ttrigger as ttrigger
 import numpy as np
+from enthought.traits.ui.api import View, Item, Group
+from enthought.chaco.chaco_plot_editor import ChacoPlotItem
 
 # For a tutorial on Chaco and Traits, see
 # http://code.enthought.com/projects/chaco/docs/html/user_manual/tutorial_2.html
-
-from enthought.traits.ui.api import View, Item, Group
-from enthought.chaco.chaco_plot_editor import ChacoPlotItem
 
 class FviewHistogram(traited_plugin.HasTraits_FViewPlugin):
     plugin_name = 'image histogram'
@@ -42,7 +36,6 @@ class FviewHistogram(traited_plugin.HasTraits_FViewPlugin):
                               ),
                 ),
         resizable=True,
-        width=800, height=200,
         )
 
     def camera_starting_notification(self,cam_id,
